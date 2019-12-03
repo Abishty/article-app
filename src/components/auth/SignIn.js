@@ -58,7 +58,6 @@ class SignIn extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('signi case',state);
     return {
         authError: state.auth.authError,
         auth: state.firebase.auth
