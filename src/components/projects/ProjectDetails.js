@@ -6,6 +6,24 @@ import { Redirect } from 'react-router-dom';
 
 const ProjectDetails = props => {
   const { project, auth } = props;
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  let createdTime = project.createdAt.toDate();
+  let createdDate = createdTime.getDate();
+  let createdHour = createdTime.getHours();
+  let createdMonth = monthNames[createdTime.getMonth()];
   if(!auth.uid){
     return (
       <Redirect to='/' />
@@ -23,7 +41,7 @@ const ProjectDetails = props => {
             <div>
               Posted by the {project.authorFirstName} {project.authorLastName}
             </div>
-            <div>02 December, 2am</div>
+            <div>{createdDate} {createdMonth}, {createdHour + ":00"}</div>
           </div>
         </div>
       </div>
