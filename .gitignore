@@ -23,3 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 /src/config/fbConfig.js
+
+/functions/node_modules
+
+/.firebaserc
+/firebase.json
